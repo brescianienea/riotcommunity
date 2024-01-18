@@ -1,0 +1,28 @@
+footer {
+  section {
+    margin-top: auto;
+    margin-bottom: 90px;
+    background-color: $background-color__dark;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 5px;
+    border-bottom: 2px solid $border-color__dark;
+    border-top: 2px solid $border-color__dark;
+    @media screen and (min-width: $screen-m) {
+      margin-bottom: 0;
+    }
+
+    .row {
+      display: flex;
+
+      p {
+        margin: 0;
+        font-size: 0.8rem;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+
+}

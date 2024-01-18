@@ -1,0 +1,121 @@
+#suneditor_writer, #suneditor_reader {
+  width: auto !important;
+  height: 100%;
+  background-color: $background-color__light;
+  color: $font-color;
+  border-color: black;
+  font-family: $font-family__normal;
+
+  .se-container {
+    display: flex;
+    flex-direction: column;
+
+    .se-wrapper {
+      height: 100%;
+      flex: 1;
+    }
+  }
+
+  .se-toolbar {
+    background-color: $background-color__light;
+    outline-color: $background-color__dark;
+  }
+
+  .se-btn-module-border {
+    border-color: $background-color__dark;
+  }
+
+  .se-list-basic {
+    button {
+      color: black;
+    }
+  }
+
+  button {
+    color: $font-color;
+
+    &:hover {
+      color: black;
+      background-color: $icon-color;
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: $font-color;
+
+      &:hover {
+        background-color: $primary-color__hover;
+        color: $font-color;
+      }
+    }
+
+    &:enabled.on {
+      color: black;
+    }
+  }
+
+  .sun-editor-editable {
+    color: $font-color;
+    background-color: $background-color__light;
+    font-family: $font-family__normal;
+    height: 100% !important;
+
+    a {
+      color: dodgerblue;
+
+      &:hover {
+        color: dodgerblue;
+      }
+
+      &.on {
+        color: black;
+      }
+    }
+  }
+
+  .se-resizing-bar {
+    background-color: $background-color__light;
+    border-color: $background-color__dark;
+    height: 16px;
+  }
+
+  .se-dialog-content {
+    color: black;
+    max-width: 80vw;
+
+    box-sizing: border-box;
+
+    .se-dialog-tabs {
+      display: none;
+
+    }
+
+    .se-dialog-form-footer {
+      display: none;
+    }
+
+  }
+
+  figure {
+    figcaption {
+      background-color: $background-color__light;
+    }
+  }
+
+  .se-btn-primary {
+    background-color: $primary_color;
+    border-color: $primary_color;
+
+    &:hover {
+      background-color: $primary_color__hover;
+      color: $font-color;
+    }
+  }
+
+  .link-content {
+    button {
+      color: black;
+    }
+  }
+
+}

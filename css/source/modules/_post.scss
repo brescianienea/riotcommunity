@@ -1,0 +1,225 @@
+.post-list {
+  list-style: none;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    position: relative;
+    padding: 20px;
+    background: $background-color__light;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+    section {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+
+      .topic {
+        margin-left: auto;
+        background: $icon-color;
+        color: $background-color--dark;
+        font-weight: 700;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+
+    }
+
+  }
+
+  span {
+    font-size: 12px;
+  }
+
+  button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+
+    background: $background-color;
+
+    svg {
+      path {
+        fill: $icon-color;
+      }
+    }
+  }
+
+
+}
+
+
+.game-icon {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  border-radius: 50%;
+  background: $background-color__dark;
+
+  &.lor {
+    svg {
+      path {
+        fill: #D58F45 !important;
+      }
+    }
+
+  }
+
+  &.lol {
+    svg {
+      path {
+        fill: #C08D2C !important;
+      }
+    }
+  }
+
+
+  &.valorant {
+    svg {
+      path {
+        fill: #FB4352 !important;
+      }
+    }
+  }
+
+
+  &.wildrift {
+    svg {
+      path {
+        fill: #32C4F9 !important;
+      }
+    }
+  }
+
+  &.tft {
+    svg {
+      path {
+        fill: #FFB702 !important;
+      }
+    }
+  }
+
+  svg {
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+  }
+
+
+}
+
+
+.post {
+  .tags {
+    justify-content: flex-start;
+    column-gap: 10px;
+    margin-bottom: 10px;
+
+
+    .topic {
+      background: $icon-color;
+      color: $background-color--dark;
+      font-weight: 700;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-left: auto;
+      background-color: transparent;
+      border: none;
+
+      svg {
+        path {
+          fill: $icon_color;
+        }
+      }
+
+    }
+  }
+
+  .se-toolbar, .se-resizing-bar {
+    display: none !important;
+  }
+
+  .sun-editor {
+    height: fit-content !important;
+  }
+
+  .se-wrapper {
+    height: fit-content !important;
+  }
+
+  .comments {
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+
+      .comment {
+        display: flex;
+        flex-direction: column;
+        background-color: $background-color__light;
+        padding: 10px;
+        border-radius: 10px;
+
+        span:first-of-type {
+          font-weight: bold;
+        }
+
+        span:last-of-type {
+          margin-top: 10px;
+          font-size: 12px;
+        }
+
+      }
+
+    }
+
+    .new-comment {
+      position: relative;
+      display: block;
+
+      button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        height: 32px;
+        width: 32px;
+        background-color: $primary-color;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 10px;
+
+        svg {
+          path {
+            fill: $icon-color__selected;
+          }
+        }
+      }
+
+      textarea {
+        font-family: $font-family__normal;
+        color: $font-color;
+        padding: 15px 60px 15px 15px;
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        background-color: $background-color__light;
+        border-color: $background-color__dark;
+        border-radius: 5px;
+      }
+    }
+  }
+
+}

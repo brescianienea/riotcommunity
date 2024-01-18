@@ -1,0 +1,371 @@
+
+.login {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+
+  .container {
+    width: 80%;
+    background-color: $background-color__login;
+    padding: 32px;
+    text-align: center;
+    border-radius: 10px;
+
+    form {
+      padding-top: 1rem;
+
+      margin: auto;
+      animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.175s 1 normal forwards;
+
+      .input-container {
+        position: relative;
+        height: 4em;
+
+        margin-bottom: 16px;
+        border-bottom-width: 1px;
+
+        button {
+          position: absolute;
+          right: 0;
+          height: 100%;
+          z-index: 999;
+
+          background-color: transparent;
+          border: none;
+          padding: 0 10px;
+
+          svg {
+            path {
+              fill: $icon-color;
+            }
+          }
+
+          .toggled {
+            display: none;
+          }
+
+          &.toggled {
+            .toggled {
+              display: block;
+            }
+
+            .not-toggled {
+              display: none;
+            }
+          }
+        }
+
+      }
+
+
+      .input-value {
+        float: right;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+
+        + * {
+          clear: both;
+        }
+
+      }
+
+      input {
+        height: 100%;
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        position: absolute;
+        border: 0;
+        background: $background-color;
+        z-index: 1;
+        font-size: 1.6em;
+        font-weight: bold;
+        letter-spacing: 0.012em;
+        color: $font-color;
+        padding-left: 10px;
+        padding-top: 15px;
+        border-radius: 3px;
+
+        &:focus-visible {
+          outline: $icon-color solid 2px;
+        }
+
+        &:hover {
+          background-color: $background-color__login-input-hovered;
+        }
+
+        &:focus {
+          background-color: $background-color;
+        }
+
+      }
+
+      label {
+        z-index: 9999;
+        font-weight: bold;
+        display: block;
+        position: absolute;
+        margin-top: 5px;
+        padding-left: 10px;
+        color: $icon-color;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 1.2em;
+        animation-name: labelIn;
+        animation-duration: 0.2s;
+        animation-direction: reverse;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.77, 0, .175, 1);
+        pointer-events: none
+      }
+
+      input:focus + label, input:valid + label {
+        font-weight: bold;
+        animation-name: labelOut;
+        animation-duration: 0.2s;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+      }
+
+      .button {
+        position: relative;
+        margin-top: 2.5rem;
+
+        .btn {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 30%;
+          background: $primary-color;
+          border: 0;
+          font-size: 3rem;
+
+          svg {
+            height: 2rem;
+            width: 2rem;
+
+            path {
+              fill: $font-color;
+            }
+          }
+
+          &:hover {
+            background: $primary-color__hover;
+            cursor: pointer;
+          }
+
+          &:disabled {
+            background-color: transparent;
+            border: 1px solid $icon-color;
+            color: $icon-color;
+
+            svg {
+              path {
+                fill: $icon-color;
+
+              }
+            }
+          }
+        }
+
+      }
+
+      .bottom-links {
+        position: relative;
+        margin-top: 3em;
+        text-transform: uppercase;
+
+        > p {
+          padding: 2px;
+
+        }
+      }
+
+      &#registration_form {
+        .tab {
+          display: none;
+
+          input[type=number]::-webkit-inner-spin-button,
+          input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+          }
+
+
+          .date-wrapper {
+            display: flex;
+            border-radius: 3px;
+            background-color: $background-color;
+
+            .input-container {
+              margin-bottom: 0;
+            }
+
+            &:has(.input-container) {
+              &:has(input) {
+                &:has(:focus) {
+                  outline: #ababab solid 2px;
+                }
+              }
+            }
+
+            input {
+              &:focus-visible {
+                outline: none;
+              }
+
+              &::placeholder {
+                color: transparent;
+              }
+
+              &:focus {
+                &::placeholder {
+                  color: #6a696a;
+                }
+              }
+            }
+          }
+        }
+
+        .step {
+          height: 3px;
+          width: 24px;
+          margin: 0 2px;
+          background-color: $icon-color;
+          border: none;
+          display: inline-block;
+          opacity: 1;
+        }
+
+        /* Mark the active step: */
+        .step.active {
+          background-color: $icon-color__selected;
+        }
+
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+          background-color: $primary-color;
+        }
+
+
+        .password-requirements {
+          text-align: left;
+
+          .requirement {
+            font-size: 14px;
+            flex: 1 0 50%;
+            min-width: max-content;
+            margin: 2px 0;
+            color: $icon-color;
+
+            &:before {
+              content: '';
+              margin-right: 10px;
+              font-size: 1.6em;
+              display: inline-block;
+              position: relative;
+              height: 16px;
+              width: 16px;
+              top: .15em;
+              background-color: $icon-color;
+              -webkit-mask: url(/source/icons/square-xmark-solid.svg) no-repeat 50% 50%;
+              mask: url(/source/icons/square-xmark-solid.svg) no-repeat 50% 50%;
+              -webkit-mask-size: cover;
+              mask-size: cover;
+
+            }
+
+
+            &.valid {
+
+              &:before {
+                content: '';
+                -webkit-mask: url(/source/icons/circle-check-solid.svg) no-repeat 50% 50%;
+                mask: url(/source/icons/circle-check-solid.svg) no-repeat 50% 50%;
+                background-color: $icon-color__valid;
+
+              }
+            }
+
+            &.error {
+              color: red;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@keyframes labelIn {
+  0% {
+    left: 1px;
+    opacity: 1;
+    top: 1.2em;
+    font-size: 1em;
+    padding-left: 1em;
+  }
+  50% {
+    font-size: 1em;
+    left: 1em;
+    opacity: 0;
+    top: 1.2em;
+    padding-left: 1em;
+  }
+  50.01% {
+    font-size: 0.85em;
+    left: 1em;
+    opacity: 0;
+    top: 0.2em;
+  }
+  100% {
+    font-size: 0.85em;
+    opacity: 1;
+    left: 1px;
+    top: 0.2em;
+  }
+}
+
+@keyframes labelOut {
+  0% {
+    left: 1px;
+    opacity: 1;
+    top: 1.2em;
+    font-size: 1em;
+    padding-left: 1em;
+  }
+  50% {
+    font-size: 1em;
+    left: 1em;
+    opacity: 0;
+    top: 1.2em;
+    padding-left: 1em;
+  }
+  50.01% {
+    font-size: 0.85em;
+    left: 1em;
+    opacity: 0;
+    top: 0.2em;
+  }
+  100% {
+    font-size: 0.85em;
+    opacity: 1;
+    left: 1px;
+    top: 0.2em;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
